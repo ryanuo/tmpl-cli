@@ -2,7 +2,7 @@ use clap::{Arg, ArgAction, Command};
 
 pub fn build_cli() -> Command {
     Command::new("Template CLI")
-        .version("1.1")
+        .version("0.1.0")
         .about("Retrieve project templates from remote Git repository")
         .arg(
             Arg::new("repo")
