@@ -28,22 +28,35 @@ pub fn get_template_list(target_dir: &Path) -> Result<Vec<String>, TemplateError
     }
 }
 
-pub fn copy_template(source: &Path, dest: &Path) -> Result<(), TemplateError> {
+pub fn copy_template(
+    source: &Path,
+    dest: &Path,
+    rename_option: Option<&str>,
+) -> Result<(), TemplateError> {
     if !source.exists() {
         return Err(TemplateError::InvalidTemplate(source.display().to_string()));
     }
 
-    fs::create_dir_all(dest).map_err(|e| {
-        TemplateError::TargetError(format!("Failed to create {}: {}", dest.display(), e))
+    let effective_dest = match rename_option {
+        Some(new_name) => Path::new(new_name),
+        None => dest,
+    };
+
+    fs::create_dir_all(&effective_dest).map_err(|e| {
+        TemplateError::TargetError(format!(
+            "Failed to create {}: {}",
+            effective_dest.display(),
+            e
+        ))
     })?;
 
     for entry in fs::read_dir(source)? {
         let entry = entry.map_err(|e| TemplateError::IoError(e))?;
         let src_path = entry.path();
-        let dest_path = dest.join(entry.file_name());
+        let dest_path = effective_dest.join(entry.file_name());
 
         if src_path.is_dir() {
-            copy_template(&src_path, &dest_path)?;
+            copy_template(&src_path, &dest_path, None)?; // Keep None for recursive calls
         } else {
             fs::copy(&src_path, &dest_path).map_err(|e| {
                 TemplateError::CopyError(format!(

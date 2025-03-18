@@ -51,7 +51,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
         None => {
             match cache.repo.clone() {
                 Some(cached_url) => cached_url,
-                None => return Err(Box::new(TemplateError::MissingRepoUrl)), // 使用描述性错误消息
+                None => return Err(Box::new(TemplateError::MissingRepoUrl)),
             }
         }
     };
@@ -105,9 +105,10 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     let source_dir = clone_path.join(&selected_template);
     let target_subdir = target_dir.join(&selected_template);
-
-    template::copy_template(&source_dir, &target_subdir)
-        .map_err(|e| format!("Copying failed: {}", e))?;
+    let rename_option = matches.get_one::<String>("rename").map(|s| s.as_str());
+    if let Err(e) = template::copy_template(&source_dir, &target_subdir, rename_option) {
+        eprintln!("Copying failed: {:?}", e);
+    }
     println!(
         "\nTemplate '{}' downloaded successfully!",
         selected_template

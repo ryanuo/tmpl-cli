@@ -32,6 +32,13 @@ pub fn build_cli() -> Command {
                 .help("Specify the target directory to copy templates to (default: ./)"),
         )
         .arg(
+            Arg::new("rename")
+                .short('n')
+                .long("rename")
+                .value_name("NAME")
+                .help("Rename the template directory to the specified name"),
+        )
+        .arg(
             Arg::new("clear-cache")
                 .short('c')
                 .long("clear-cache")

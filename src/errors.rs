@@ -14,6 +14,6 @@ pub enum TemplateError {
     IoError(#[from] std::io::Error),
     #[error("Template directory not found on remote")]
     TemplateNotFound,
-    #[error("No repository URL provided and no cache found.")]
+    #[error("No repository URL provided and no cache found.\n Please run --help or -h for more info.")]
     MissingRepoUrl,
 }
