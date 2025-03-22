@@ -19,30 +19,31 @@ pub fn read_config_json(config_file: &str) -> PathBuf {
     config_dir.join(config_file)
 }
 
-/// Clones a GitHub repository to the specified target path.
 pub fn clone_repository(
     github_url: &str,
     target_path: &Path,
 ) -> Result<(), Box<dyn std::error::Error>> {
     // Set up loading indicator
-    let pb = ProgressBar::new_spinner();
+    let pb = ProgressBar::new_spinner(); // 使用 Spinner 类型的进度条
     pb.set_style(
-        ProgressStyle::with_template(
-            "[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}",
-        )
-        .unwrap()
-        .progress_chars("##-"),
+        ProgressStyle::with_template("{spinner:.cyan} [{elapsed_precise}] {msg}")
+            .unwrap()
+            .tick_strings(&["-", "\\", "|", "/"]),
     );
 
-    pb.set_message("Cloning the project...");
+    pb.set_message("Initializing...");
     pb.enable_steady_tick(Duration::from_millis(100));
 
-    // Clone the GitHub repository
+    // Start cloning the repository
+    pb.set_message("Cloning the repository...");
     let output = Command::new("git")
         .args(&["clone", github_url, target_path.to_str().unwrap()])
         .output()?;
 
     if output.status.success() {
+        pb.set_message("Finalizing...");
+        std::thread::sleep(Duration::from_millis(500)); // 模拟一些后续操作
+
         pb.finish_with_message(
             format!("Successfully cloned the project to: {:?}", target_path)
                 .green()
@@ -56,9 +57,9 @@ pub fn clone_repository(
                 .to_string(),
         );
     }
+
     Ok(())
 }
-
 /// Prompts the user for the target folder name to clone into and returns the path.
 pub fn get_target_path(default_name: &str) -> Result<PathBuf, Box<dyn std::error::Error>> {
     let default_path = std::env::current_dir()?.join(default_name);
