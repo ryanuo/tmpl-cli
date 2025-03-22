@@ -2,7 +2,7 @@ use clap::{Arg, ArgAction, Command};
 
 pub fn build_cli() -> Command {
     Command::new("Template CLI")
-        .version("0.1.0")
+        .version("1.1")
         .about("Retrieve project templates from remote Git repository")
         .arg(
             Arg::new("repo")
@@ -36,7 +36,14 @@ pub fn build_cli() -> Command {
                 .short('n')
                 .long("rename")
                 .value_name("NAME")
-                .help("Rename the template directory to the specified name"),
+                .help("Rename the template to the specified name"),
+        )
+        .arg(
+            Arg::new("original")
+                .short('o')
+                .long("original")
+                .num_args(0..=1)
+                .help("Fetch from the remote repository, with options to select"),
         )
         .arg(
             Arg::new("clear-cache")

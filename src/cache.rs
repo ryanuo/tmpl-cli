@@ -26,3 +26,16 @@ pub fn clear_cache(cache_path: &PathBuf) -> Result<(), std::io::Error> {
     fs::remove_file(cache_path)?;
     Ok(())
 }
+
+pub fn check_cache(cache_path: &PathBuf) -> Result<(), Box<dyn std::error::Error>> {
+    if cache_path.exists() {
+        let cache = read_cache(cache_path)?;
+        println!("Cached configurations:");
+        println!("Repo: {:?}", cache.repo);
+        println!("Branch: {:?}", cache.branch);
+        println!("Target Dir: {:?}", cache.target_dir);
+    } else {
+        println!("No cache found.");
+    }
+    Ok(())
+}

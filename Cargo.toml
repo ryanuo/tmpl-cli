@@ -1,20 +1,16 @@
 [package]
 name = "tmpl-cli"
-version = "0.1.0"
-edition = '2021'
-
-description = "Template CLI"
-license = "MIT"
-repository = "https://github.com/ryanuo/tmpl-cli"
-homepage = "https://ryanuo.cc"
-authors = ["Ryanuo <ryanuo@aliyun.com>"]
-
+version = "0.2.0"
+edition = "2021"
 
 [dependencies]
-clap = "4.1"  # 处理命令行参数
-git2 = "0.14"  # 与 Git 库交互
-dialoguer = "0.9"
-tempfile = "3"
-thiserror = "1.0"
+clap = "4.1"
+git2 = "0.20.1"
+dialoguer = "0.11"
+tempfile = "3.19.1"
+thiserror = "2.0.12"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+colored = "3.0.0"
+indicatif = "0.17.11"
+dirs = "6.0.0"

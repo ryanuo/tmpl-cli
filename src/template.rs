@@ -1,4 +1,5 @@
 use crate::errors::TemplateError;
+use dialoguer::Select;
 use std::ffi::OsStr;
 use std::fs;
 use std::path::Path;
@@ -69,4 +70,22 @@ pub fn copy_template(
     }
 
     Ok(())
+}
+
+pub fn select_template(
+    selected_template: Option<&String>,
+    templates: &[String],
+) -> Result<String, Box<dyn std::error::Error>> {
+    match selected_template {
+        Some(name) if templates.contains(name) => Ok(name.clone()),
+        None => {
+            let selection = Select::new()
+                .with_prompt("Select Template")
+                .items(templates)
+                .default(0)
+                .interact()?;
+            Ok(templates[selection].clone())
+        }
+        Some(name) => Err(Box::new(TemplateError::InvalidTemplate(name.clone()))),
+    }
 }
