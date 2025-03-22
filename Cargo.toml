@@ -2,6 +2,11 @@
 name = "tmpl-cli"
 version = "0.2.0"
 edition = "2021"
+description = "Template CLI"
+license = "MIT"
+repository = "https://github.com/ryanuo/tmpl-cli"
+homepage = "https://ryanuo.cc"
+authors = ["Ryanuo <ryanuo@aliyun.com>"]
 
 [dependencies]
 clap = "4.1"
