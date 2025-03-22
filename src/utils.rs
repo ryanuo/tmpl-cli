@@ -5,6 +5,7 @@ use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
 use std::time::Duration;
+use std::fs;
 
 pub fn read_config_json(config_file: &str) -> PathBuf {
     let home_dir = dirs::home_dir().expect("Unable to access the user home directory.");
