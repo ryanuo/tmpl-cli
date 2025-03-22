@@ -1,0 +1,666 @@
+{
+  "Vanilla": [
+      {
+          "name": "vite-vanilla-ts-lib-starter",
+          "link": "https://github.com/kbysiec/vite-vanilla-ts-lib-starter",
+          "desc": "- Starter for library (CJS, ESM, IIFE) with TypeScript, ESLint, Stylelint, Prettier, Jest, Husky + lint-staged."
+      },
+      {
+          "name": "vite-tailwind-nojs-starter",
+          "link": "https://github.com/kometolabs/vite-tailwind-nojs-starter",
+          "desc": "- NoJS Tailwind CSS starter template."
+      },
+      {
+          "name": "vite-tailwind-stimulus-starter",
+          "link": "https://github.com/jeremyfrank/vite-tailwind-stimulus-starter",
+          "desc": "- Starter template for Tailwind CSS and Stimulus controllers."
+      },
+      {
+          "name": "vite-phaser-ts",
+          "link": "https://github.com/iwantantra/vite-phaser-ts",
+          "desc": "- Starter template with Phaser and Typescript."
+      },
+      {
+          "name": "vite-tinybase",
+          "link": "https://github.com/tinyplex/vite-tinybase",
+          "desc": "- Starter template for TinyBase."
+      },
+      {
+          "name": "vite-tinybase-ts",
+          "link": "https://github.com/tinyplex/vite-tinybase-ts",
+          "desc": "- Starter template for TinyBase and TypeScript."
+      },
+      {
+          "name": "vite-vanilla-js-template",
+          "link": "https://github.com/Barata-Ribeiro/vite-vanilla-js-template",
+          "desc": "- Starter template ESlint, Prettier, PostCSS, Nesting, Autoprefixer, CSS Nano, CSS Reset."
+      },
+      {
+          "name": "vite-starter-markup-template",
+          "link": "https://github.com/Grinch3214/vite-starter-markup-template",
+          "desc": "- Starter template for Markup."
+      },
+      {
+          "name": "create-domco",
+          "link": "https://github.com/rossrobino/domco/tree/main/packages/create-domco",
+          "desc": "- Starter template for domco."
+      },
+      {
+          "name": "vite-vanilla-library-template",
+          "link": "https://github.com/hywax/vite-vanilla-library-template",
+          "desc": "- Starter template TypeScript, ESLint, Vitest, Husky, Conventional Commits, GitHub actions."
+      },
+      {
+          "name": "vite-alpine-template",
+          "link": "https://github.com/dvd101x/vite-alpine",
+          "desc": "- Starter template for Alpine."
+      },
+      {
+          "name": "vite-ts-lib-starter",
+          "link": "https://github.com/matronator/vite-ts-lib-starter",
+          "desc": "- Starter template for libraries with TypeScript, Bun, Vitest, Prettier, Renovate and np."
+      },
+      {
+          "name": "vite-swagger-ui",
+          "link": "https://github.com/lukefernandez/vite-swagger-ui",
+          "desc": "- Swagger UI with built-in support for multiple APIs."
+      },
+      {
+          "name": "template-vite",
+          "link": "https://github.com/phaserjs/template-vite",
+          "desc": "- An official quickstart template with Phaser."
+      },
+      {
+          "name": "template-vite-ts",
+          "link": "https://github.com/phaserjs/template-vite-ts",
+          "desc": "- An official quickstart template with Phaser and TypeScript."
+      },
+      {
+          "name": "vite-ts-bulma-sass-template",
+          "link": "https://github.com/naoki-00-ito/vite-ts-bulma-sass-template",
+          "desc": "- Starter templateTypeScript,Bulma,Sass,Stylelint,Biome."
+      }
+  ],
+  "Vue 3": [
+      {
+          "name": "Vitesse",
+          "link": "https://github.com/antfu/vitesse",
+          "desc": "- Opinionated starter template."
+      },
+      {
+          "name": "vite-ts-tailwind-starter",
+          "link": "https://github.com/Uninen/vite-ts-tailwind-starter",
+          "desc": "- TypeScript, Tailwind CSS, Cypress.io e2e tests + CI."
+      },
+      {
+          "name": "vue-vben-admin",
+          "link": "https://github.com/anncwb/vue-vben-admin",
+          "desc": "- Background management template based on Vue3, Ant-Design-Vue, TypeScript."
+      },
+      {
+          "name": "vue-pure-admin",
+          "link": "https://github.com/xiaoxian521/vue-pure-admin",
+          "desc": "- Background management template based on Vue3, TypeScript, Tailwind CSS, element-plus."
+      },
+      {
+          "name": "fast-crud",
+          "link": "https://github.com/fast-crud/fast-crud",
+          "desc": "- Options-oriented crud framework, developing crud as fast as lightning."
+      },
+      {
+          "name": "vitesse-lite",
+          "link": "https://github.com/antfu/vitesse-lite",
+          "desc": "- Lightweight version of Vitesse."
+      },
+      {
+          "name": "vitesse-webext",
+          "link": "https://github.com/antfu/vitesse-webext",
+          "desc": "- WebExtension Vite Starter Template."
+      },
+      {
+          "name": "naive-ui-dashboard-template",
+          "link": "https://github.com/Innei/naive-ui-dashboard-template",
+          "desc": "- UI friendly, Vue 3 + TSX + TailwindCSS 2 JIT + PostCSS + Naive UI."
+      },
+      {
+          "name": "Vitawind Creator",
+          "link": "https://vitawind.vercel.app/scaffolding/creator/",
+          "desc": "- Create TailwindCSS project rapidly."
+      },
+      {
+          "name": "vue3-tailwind3-website-starter",
+          "link": "https://github.com/feitian124/vue3-tailwind3-website-starter.git",
+          "desc": "- Vue3 / Vite / TailwindCSS website starter template, with guides on each page."
+      },
+      {
+          "name": "boot-vue",
+          "link": "https://github.com/kirklin/boot-vue",
+          "desc": "- Starter template with TypeScript + UnoCSS + DaisyUI + Vue Router + Pinia."
+      },
+      {
+          "name": "Vue Naive",
+          "link": "https://github.com/zclzone/vue-naive-admin",
+          "desc": "- Admin template, base on Vue 3 + Pinia + Naive UI."
+      },
+      {
+          "name": "vue-admin-box",
+          "link": "https://github.com/cmdparkour/vue-admin-box",
+          "desc": "- Admin template, based on Vue 3 + Element-plus."
+      },
+      {
+          "name": "vite-vue-proste",
+          "link": "https://github.com/xyhxx/vite-vue-proste",
+          "desc": "- Pinia + Typescript + Vue-Router4 + Vitest + Vue-Test-Utils + Vue-Query + Sass + ESLint + Stylelint + Prettier +project presets."
+      },
+      {
+          "name": "vue-vite-ssr",
+          "link": "https://github.com/EverSeenTOTOTO/browser-app-boilerplate/tree/vue-vite-ssr",
+          "desc": "- Typescript, Eslint, Stylelint, Husky, Lint-staged and Commitlint."
+      },
+      {
+          "name": "vue3-vant-mobile",
+          "link": "https://github.com/easy-temps/vue3-vant-mobile",
+          "desc": "- Vite5 + Vue3 + Vant4 + Pinia + Vue-Router4 + TypeScript Mobile Template."
+      },
+      {
+          "name": "vue-vite-tw-ts",
+          "link": "https://github.com/ChronosMasterOfAllTime/vue-vite-tw-ts",
+          "desc": "- Vue 3 + Vite + Vitest + Cypress E2E + Naive UI + Pinia + Vue Router."
+      },
+      {
+          "name": "vite-vue-js-starter-template",
+          "link": "https://github.com/ElanYoung/vite-vue-js-starter-template",
+          "desc": "- Vite + Vue3 + JavaScript + Vue Router + Pinia + TDesign + ESLint + Stylelint + Prettier Simple Template."
+      },
+      {
+          "name": "vue-xs-admin",
+          "link": "https://github.com/jsxiaosi/vue-xs-admin",
+          "desc": "- Based on Vue3, Vite3 ElementPlus, TypeScript, Pinia, VueRouter."
+      },
+      {
+          "name": "vulcan",
+          "link": "https://github.com/pengzhanbo/vulcan",
+          "desc": "- The template for mobile application. Vite, Vue 3, TypeScript, Sass, i18n, Vitest&Cypress, Pinia, APIs&Mock, ESLint, Prettier, auto-importing."
+      },
+      {
+          "name": "antdv-pro",
+          "link": "https://github.com/antdv-pro/antdv-pro",
+          "desc": "- AntdvPro is a complete set of enterprise-level mid-backend front-end/design solutions based on Vue3, Vite4, ant-design-vue4, Pinia, UnoCSS and Typescript."
+      },
+      {
+          "name": "vue3-quick-start",
+          "link": "https://github.com/wforguo/vue3-quick-start",
+          "desc": "- Building an engineered Vue 3 project, integrated withVite+Vue3+TypeScript+ESLint+Prettier+Commitizen+Husky+LintStaged+CommitLint+AutoImport+ReleaseIt."
+      },
+      {
+          "name": "antd-vue3-admin",
+          "link": "https://github.com/Zuojiangtao/antd-vue3-admin",
+          "desc": "- A starter template based on Vue3, Vite4, TS5 and Ant-Design-Vue4."
+      },
+      {
+          "name": "vue-file-upload",
+          "link": "https://github.com/canopas/vue-file-upload",
+          "desc": "- A file management system built withVue3andTypeScriptthat allows for single and multiple file uploading with a preview feature."
+      },
+      {
+          "name": "arco-admin",
+          "link": "https://github.com/LIjiAngChen8/arco-admin",
+          "desc": "-Vite+ArcoDesign+TypeScriptfollowsESMstandards, offering an out-of-the-box,standardized, feature-rich template for middle and back-office management systems."
+      },
+      {
+          "name": "materio-free-vuetify-nuxtjs-admin-template",
+          "link": "https://github.com/themeselection/materio-vuetify-nuxtjs-admin-template-free",
+          "desc": "- Vuejs 3, Vite 5, Vuetify 3 & NuxtJS 3."
+      },
+      {
+          "name": "vite-plugin-vue-style-bundler",
+          "link": "https://github.com/zhangfisher/vite-plugin-vue-style-bundler",
+          "desc": "- Auto bundle Vue/sfc styles into JavaScript."
+      },
+      {
+          "name": "celeris-web",
+          "link": "https://github.com/kirklin/celeris-web",
+          "desc": "- Template based onVite+Vue3+TypeScript+Vue-Router+Pinia+Unocss+Naive UI+pnpm Monorepo."
+      },
+      {
+          "name": "vite-ts-starter",
+          "link": "https://github.com/pdsuwwz/vite-ts-starter",
+          "desc": "- VueI18nDynamic Router Localization Template, Internationalized Applications withUnoCSS+Unplugin+Element-Plus+Vitest+TypeScript+Vue-Router+Vuex+Scss+ESLint+Stylelint+Husky+lint-staged."
+      },
+      {
+          "name": "vite-vue3-tailwind4-daisyui5-starter-template",
+          "link": "https://github.com/martinille/starter-template-vite-vue3-sass-tailwind4-daisyui5",
+          "desc": "- Starter template with Vue 3 + Vite + Tailwind CSS 4 + DaisyUI 5 + Sass."
+      }
+  ],
+  "Vue 2": [
+      {
+          "name": "vite-vue2-windicss-starter",
+          "link": "https://github.com/lstoeferle/vite-vue2-windicss-starter",
+          "desc": "- Vue 2, Vue Router, Composition API, VueUse, Windi CSS and TypeScript."
+      },
+      {
+          "name": "vite-vue2-ts-starter",
+          "link": "https://github.com/logue/vite-vue2-ts-starter",
+          "desc": "- Vue2 TypeScript starter template using vue-property-decorator, vue-router, Vuex."
+      },
+      {
+          "name": "vite-vue2-ts-vuetify-starter",
+          "link": "https://github.com/logue/vite-vue2-vuetify-ts-starter",
+          "desc": "- It is the above vite-vue2-ts-starter with Vuetify and its optimized settings. Includes basic templates."
+      },
+      {
+          "name": "vitify-admin",
+          "link": "https://github.com/kingyue737/vitify-admin",
+          "desc": "- Vuetify admin starter template with full TypeScript support and intellisense of Vuetify components."
+      }
+  ],
+  "React": [
+      {
+          "name": "Vitamin",
+          "link": "https://github.com/wtchnm/Vitamin",
+          "desc": "- React TypeScript, TailwindCSS, SPA + PWA, Cypress and CI."
+      },
+      {
+          "name": "vite-template-react",
+          "link": "https://github.com/SafdarJamal/vite-template-react",
+          "desc": "- A Create React App-like template."
+      },
+      {
+          "name": "vitejs-template-react-rescript",
+          "link": "https://github.com/jihchi/vitejs-template-react-rescript",
+          "desc": "- React + ReScript."
+      },
+      {
+          "name": "template-vite-react",
+          "link": "https://github.com/lzm0x219/template-vite-react",
+          "desc": "- A minimal React Vite starter template."
+      },
+      {
+          "name": "reactjs-vite-tailwindcss-boilerplate",
+          "link": "https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate",
+          "desc": "- React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier."
+      },
+      {
+          "name": "vite-react-ts-tailwind-firebase-starter",
+          "link": "https://github.com/TeXmeijin/vite-react-ts-tailwind-firebase-starter",
+          "desc": "- Starter using Vite + React + TypeScript + Tailwind CSS (daisyUI) + Firebase (v9) + Prettier + ESLint."
+      },
+      {
+          "name": "create-react-app-vite",
+          "link": "https://github.com/laststance/create-react-app-vite",
+          "desc": "- React, TypeScript, TailwindCSS, MSW, Vitest, React Testing Library, ESLint, Prettier, GitHub Actions."
+      },
+      {
+          "name": "chrome-extension-boilerplate-react-vite",
+          "link": "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite",
+          "desc": "- React + TypeScript + SASS + Prettier + ESLint + GitHub Actions + HMR(Hot Module Reload) + Turborepo + Chrome Extension Manifest v3."
+      },
+      {
+          "name": "vite-rtk-query",
+          "link": "https://github.com/laststance/vite-rtk-query",
+          "desc": "- React, TypeScript, Redux Toolkit, RTK Query, TailwindCSS, MSW, Jest, React Testing Library, ESLint, Prettier."
+      },
+      {
+          "name": "vite-react-proste",
+          "link": "https://github.com/xyhxx/vite-react-proste",
+          "desc": "- React + TypeScript +react-router-dom+ Recoil + SASS + Testing Library +react-query+ ESLint + Stylelint + Prettier."
+      },
+      {
+          "name": "React-PWA",
+          "link": "https://github.com/suren-atoyan/react-pwa",
+          "desc": "- React v18, TypeScript, Vite, React Router v6, MUI v5, Recoil, PWA, Eslint, Prettier, Husky, lint-staged, https localhost and more."
+      },
+      {
+          "name": "react-vite-ssr",
+          "link": "https://github.com/EverSeenTOTOTO/browser-app-boilerplate/tree/react-vite-ssr",
+          "desc": "- Mobx, Typescript, Eslint, Stylelint, Husky, Lint-staged and Commitlint."
+      },
+      {
+          "name": "Viterts",
+          "link": "https://github.com/erdoganbulut/viterts/",
+          "desc": "- React + TypeScript + Redux + React Router + Jest + ESLint + Airbnb + Prettier + SASS."
+      },
+      {
+          "name": "ViteRC",
+          "link": "https://github.com/potreco/viterc",
+          "desc": "- React 18 + TypeScript + ESLint (Airbnb) + Prettier + Husky + Jest + Absolute imports + Commit linting."
+      },
+      {
+          "name": "React Starter Kit",
+          "link": "https://github.com/kriasoft/react-starter-kit",
+          "desc": "- Jamstack, React, React Router, Material UI, Firebase Auth, TypeScript, ESLint, Prettier, Jest, GitHub Actions."
+      },
+      {
+          "name": "vite-mern-template",
+          "link": "https://github.com/apicgg/vite-mern-template",
+          "desc": "- React 18 + TypeScript + Vite + Redux Toolkit + ESLint + React Router DOM + Axios + React Icons + React Toastify + Express + Mongoose."
+      },
+      {
+          "name": "Varsarr",
+          "link": "https://github.com/altmshfkgudtjr/varsarr",
+          "desc": "- React, Typescript, Styled-Components, Recoil, React-Query, Axios, Absolute imports."
+      },
+      {
+          "name": "viterjs-template",
+          "link": "https://github.com/emre-cil/viterjs-template",
+          "desc": "- React + JavaScript + Redux + Material UI + Axios + ESLint + Prettier."
+      },
+      {
+          "name": "react-vite-ts-boilerplate",
+          "link": "https://github.com/choisohyun/react-vite-ts-boilerplate",
+          "desc": "- React 18, TypeScript, SCSS, ESLint, Prettier, Vitest."
+      },
+      {
+          "name": "vite-react-universal-template",
+          "link": "https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template",
+          "desc": "- React18 + TypeScript +react-router-dom+ Zustand + ESlint + Prettier + Stylelint + Husky + Docker, and APIs auto importing."
+      },
+      {
+          "name": "react-vite-template",
+          "link": "https://github.com/985563349/react-vite-template",
+          "desc": "- A react project template."
+      },
+      {
+          "name": "react-xs-admin",
+          "link": "https://github.com/jsxiaosi/react-xs-admin",
+          "desc": "- The background management system template developed based on React18 + ReactRouteV6 + Vite + And Design + ReactIntl + ReactRedux + Emulation."
+      },
+      {
+          "name": "vite-mui-ts",
+          "link": "https://github.com/emre-cil/vite-mui-ts",
+          "desc": "- React + TypeScript + Redux + Material UI + RRD + ESLint + Prettier."
+      },
+      {
+          "name": "template-vite-react-ts-tailwind",
+          "link": "https://github.com/RoyRao2333/template-vite-react-ts-tailwind",
+          "desc": "- React + TypeScript + Tailwind CSS + Eslint + Prettier."
+      },
+      {
+          "name": "vite-react-ts-template",
+          "link": "https://github.com/bartstc/vite-ts-react-template",
+          "desc": "- React 18, TypeScript, ESlint, Prettier, Dev Container, Vitest, Storybook, Playwright, MSW, React Router 6, React Query, Chakra UI, Zustand."
+      },
+      {
+          "name": "react-vite-tailwindcss-template",
+          "link": "https://github.com/quavedev/react-vite-tailwindcss-template",
+          "desc": "- React, JavaScript, TailwindCSS, ESlint, Prettier, Pre-commit."
+      },
+      {
+          "name": "vite-tinybase-react",
+          "link": "https://github.com/tinyplex/vite-tinybase-react",
+          "desc": "- Starter template for TinyBase and React."
+      },
+      {
+          "name": "vite-tinybase-ts-react",
+          "link": "https://github.com/tinyplex/vite-tinybase-ts-react",
+          "desc": "- Starter template for TinyBase, TypeScript, and React."
+      },
+      {
+          "name": "vite-react-ssr-boost-template",
+          "link": "https://github.com/Lomray-Software/vite-template",
+          "desc": "- Template for creatingReact 18SSR/SPA apps withTypeScript,Mobx,React Router,Head Manager, Suspense, Streaming. Also included CI/CD,ESLint,Prettier,Stylelint,Husky,Semantic Release."
+      },
+      {
+          "name": "vite-react-ts-shadcn-starter",
+          "link": "https://github.com/Quilljou/vite-react-ts-tailwind-starter",
+          "desc": "- Template for creatingReact 18SPA apps withTypeScript,React Router,Tailwind CSS,Shadcn UI,React Query,ESLint,Prettier,Stylelint,Husky,React-i18next,Transmart."
+      },
+      {
+          "name": "template-tauri-vite-react-ts-tailwind",
+          "link": "https://github.com/RoyRao2333/template-tauri-vite-react-ts-tailwind",
+          "desc": "- Template for Tauri + React + Typescript + TailwindCSS + Prettier + ESLint build-in."
+      },
+      {
+          "name": "vite-react-chakra-starter",
+          "link": "https://github.com/sozonome/vite-react-chakra-starter",
+          "desc": "- Starter template for creating React App with TypeScript and Chakra UI. Configured with ESLint, Prettier, and Husky."
+      },
+      {
+          "name": "vite-react-tailwind-starter",
+          "link": "https://github.com/sozonome/vite-react-tailwind-starter",
+          "desc": "- Starter template for creating React App with TypeScript and Tailwind CSS with Shadcn UI. Configured with ESLint, Prettier, and Husky."
+      },
+      {
+          "name": "monorepo-template-react",
+          "link": "https://github.com/stormkit-io/monorepo-template-react",
+          "desc": "- React + Typescript template for SSR, SPG, SPA and API provision."
+      },
+      {
+          "name": "vite-react-dapp-template",
+          "link": "https://github.com/huseyindeniz/vite-react-dapp-template",
+          "desc": "- Starter template for decentralized app frontend development with preconfigured Wallet Authentication, i18n and UI features."
+      },
+      {
+          "name": "vite-express-ssr-ts",
+          "link": "https://github.com/gihanrangana/vite-express-ssr-ts",
+          "desc": "- React + Typescript + ExpressJS + Vite SSR template with inbuild api feature."
+      },
+      {
+          "name": "vite-react-flow-template",
+          "link": "https://github.com/xyflow/vite-react-flow-template",
+          "desc": "- React Flow starter template."
+      },
+      {
+          "name": "react-vite-template",
+          "link": "https://github.com/Mirazex/react-vite-template",
+          "desc": "- React, TypeScript, Vite, Mantine, Million, Husky, Prettier, Import Sorter, Lint-staged."
+      },
+      {
+          "name": "gravity-ui-vite-template",
+          "link": "https://github.com/gravity-ui/gravity-ui-vite-example",
+          "desc": "- Template with Gravity UI ecosystem (React, TypeScript, Gravity UI, Vite, Husky, ESLint, Prettier, Lint-staged)."
+      },
+      {
+          "name": "vite-react-component-library-starter",
+          "link": "https://github.com/rayyamhk/vite-react-component-library-starter",
+          "desc": "- A starter template for creating React component libraries withTypeScript,Tailwind CSS,Storybook,Vitest,ESLint,Prettier,Husky, andGitHub Action."
+      },
+      {
+          "name": "vite-template-awesome-soho",
+          "link": "https://github.com/comnori/vite-template-awesome-soho",
+          "desc": "-DevContainerTemplate for creatingReact 18,Javascript + JSDoc,React Router,Ant Design,ESLint,EditorConfig,.env,SonarLint,Vitest."
+      },
+      {
+          "name": "react-component-library-vite",
+          "link": "https://github.com/gsharath/react-component-library-vite",
+          "desc": "- A library template for withReact,Javascript,Styled-Components,Vitest,React Testing Library,Storybook."
+      },
+      {
+          "name": "ReTail",
+          "link": "https://github.com/nikolailehbrink/retail",
+          "desc": "- Starter template for building Full Stack WEB applications withRemixusingTypeScript,Tailwind CSS,PrettierandESLint."
+      },
+      {
+          "name": "vite-react-redux-saga-typescript",
+          "link": "https://github.com/Dulajdeshan/vite-react-redux-saga-typescript",
+          "desc": "- Starter template withReact,TypeScript,Redux (Redux Toolkit),Saga,React Testing Library,ESLint,PrettierandHusky."
+      },
+      {
+          "name": "vite-complete-react-app",
+          "link": "https://github.com/ChrisUser/vite-complete-react-app",
+          "desc": "- Starter template for building web applications usingReact,TypeScript,Redux Toolkit,React Router,Axios,Sass,Moment,ESLint,PrettierandReact Testing Library."
+      },
+      {
+          "name": "vite-react-framer-starter",
+          "link": "https://github.com/matozz/vite-react-framer-starter",
+          "desc": "- Starter template withReact,TypeScript,Framer Motion,Tailwind CSS,ESLint, andPrettier."
+      },
+      {
+          "name": "vite-jsx-remove-attributes",
+          "link": "https://github.com/jacobbogers/rollup-plugin-jsx-remove-attributes",
+          "desc": "- Remove thedata-testid(configurable) from production builds."
+      },
+      {
+          "name": "React Tanning",
+          "link": "https://github.com/padunk/react-tanning",
+          "desc": "- Starter template withReact + Vite + TypeScript + TanStack + Tailwind."
+      },
+      {
+          "name": "Reactive",
+          "link": "https://github.com/ws-rush/reactive",
+          "desc": "-Reactstarter template withRemixfile-based routing convention forreact-router,UnoCSS,LinguiJs,zustand, and ton of features."
+      },
+      {
+          "name": "RVTGB",
+          "link": "https://github.com/up2dul/rvtgb",
+          "desc": "-React+TypeScriptstarter template, with file-based routing withGeneroutedandBiome."
+      },
+      {
+          "name": "vite-biome-tailwind-template",
+          "link": "https://github.com/not-first/vite-biome-tailwind-template",
+          "desc": "- React, Typescript, Biome, Tailwind CSS."
+      },
+      {
+          "name": "React Dapp Starter",
+          "link": "https://github.com/Manta-Network/react-dapp-starter",
+          "desc": "- Enterprise-ready Web3 DApp starter withTypeScript,TailwindCSS,Web3Modal,Wagmi,Shadcn UI,Zustand, andTanStack Queryfor scalable decentralized applications."
+      },
+      {
+          "name": "vite-template-react-ts-jest",
+          "link": "https://github.com/ivanzusko/vite-template-react-ts-jest",
+          "desc": "-React+TypeScript+Jest."
+      },
+      {
+          "name": "vite-amplify",
+          "link": "https://github.com/bebeal/vite-amplify",
+          "desc": "- Template with SSR + Express APIs + AWS Amplify Hosting."
+      },
+      {
+          "name": "react-component-library-template",
+          "link": "https://github.com/xxhls/react-component-library-template",
+          "desc": "- A library template for withReact,TypeScript,Vitest,React Testing Library,Storybook,Biome,Stylelint."
+      },
+      {
+          "name": "react-boilerplate",
+          "link": "https://github.com/Aubergine-Community/react-basic-template",
+          "desc": "- Template for bootstrapping withEslint+Husky+Prettier."
+      },
+      {
+          "name": "react-admin-dashboard",
+          "link": "https://github.com/larry-xue/react-admin-dashboard",
+          "desc": "- Dashboard template withTypeScript,Vite,Ant Design,React Router,Zustand,Ant Design Charts."
+      },
+      {
+          "name": "vite-plugin-ssr-config",
+          "link": "https://github.com/yracnet/vite-plugin-ssr-config",
+          "desc": "- Configure server-side rendering (SSR) withReact,React-Query,React-Router."
+      },
+      {
+          "name": "portfolio-vite-manifest",
+          "link": "https://github.com/SebConejo/portfolio-vite-manifest",
+          "desc": "- fullstack portfolio template withVite,React,TypeScript,Manifest."
+      }
+  ],
+  "Svelte": [
+      {
+          "name": "SvelteKit",
+          "link": "https://github.com/sveltejs/kit",
+          "desc": "- The fastest way to build Svelte apps."
+      },
+      {
+          "name": "svelte-vite-ssr",
+          "link": "https://github.com/jiangfengming/svelte-vite-ssr",
+          "desc": "- Svelte with SSR support."
+      },
+      {
+          "name": "template-vite-svelte-ts-tailwind",
+          "link": "https://github.com/RoyRao2333/template-vite-svelte-ts-tailwind",
+          "desc": "- Svelte + TypeScript + Tailwind CSS + Prettier."
+      },
+      {
+          "name": "vite-svelte-flow-template",
+          "link": "https://github.com/xyflow/vite-svelte-flow-template",
+          "desc": "- Svelte Flow starter template."
+      },
+      {
+          "name": "vite-svelte-docker-template",
+          "link": "https://github.com/tony-stark-eth/vite-svelte-docker-template",
+          "desc": "-Docker+Svelte+Vitest."
+      }
+  ],
+  "Solid": [
+      {
+          "name": "vitesse-solid",
+          "link": "https://github.com/xbmlz/vitesse-solid",
+          "desc": "- Opinionated Vite + SolidJS Starter Template. Includes TypeScript, ESLint, Prettier, UnoCSS, HopeUI and more."
+      },
+      {
+          "name": "vitesse-lite-solid",
+          "link": "https://github.com/Nauxscript/vitesse-lite-solid",
+          "desc": "- Lightweight Vite Starter Template for SolidJS."
+      }
+  ],
+  "Electron": [
+      {
+          "name": "electron-vite-vue",
+          "link": "https://github.com/electron-vite/electron-vite-vue",
+          "desc": "- Electron + Vite + Vue template."
+      },
+      {
+          "name": "electron-vite-react",
+          "link": "https://github.com/electron-vite/electron-vite-react",
+          "desc": "- Electron + Vite + React template."
+      },
+      {
+          "name": "electron-vite-boilerplate",
+          "link": "https://github.com/electron-vite/electron-vite-boilerplate",
+          "desc": "- Support SerialPort, SQLite3 and node C/C++ addons."
+      },
+      {
+          "name": "electron-vite-template",
+          "link": "https://github.com/umbrella22/electron-vite-template",
+          "desc": "- Electron 13, Vue 3 and TypeScript. Make your desktop development easier."
+      },
+      {
+          "name": "fast-vite-electron",
+          "link": "https://github.com/ArcherGu/fast-vite-electron",
+          "desc": "- Vue3 + Vite + Electron with esbuild."
+      },
+      {
+          "name": "fast-vite-nestjs-electron",
+          "link": "https://github.com/ArcherGu/fast-vite-nestjs-electron",
+          "desc": "- Vue3 + Vite + Electron + Nestjs with esbuild."
+      },
+      {
+          "name": "vite-plugin-electron-quick-start",
+          "link": "https://github.com/electron-vite/vite-plugin-electron-quick-start",
+          "desc": "- Template for Electron projects."
+      },
+      {
+          "name": "vite-electron-builder",
+          "link": "https://github.com/cawa-93/vite-electron-builder/",
+          "desc": "- Electron apps using Vite for both back and front-end, with automatic releases."
+      },
+      {
+          "name": "vite-reactts-electron-starter",
+          "link": "https://github.com/maxstue/vite-reactts-electron-starter",
+          "desc": "- React, Tailwind CSS, TypeScript and Electron."
+      },
+      {
+          "name": "electron-vue-template",
+          "link": "https://github.com/Deluze/electron-vue-template",
+          "desc": "- Electron template with TypeScript, including Electron Builder."
+      },
+      {
+          "name": "Vitron",
+          "link": "https://github.com/tada5hi/vitron",
+          "desc": "- Build beautiful (win, linux, mac) desktop apps for modern web projects with vite and electron."
+      },
+      {
+          "name": "Vutron",
+          "link": "https://github.com/jooy2/vutron",
+          "desc": "- Electron + Vite + Vue 3 + Pinia (TypeScript) template."
+      },
+      {
+          "name": "vite-electron-plugin",
+          "link": "https://github.com/electron-vite/vite-electron-plugin",
+          "desc": "- High-performance, esbuild-based Vite Electron plugin."
+      },
+      {
+          "name": "vite-plugin-doubleshot",
+          "link": "https://github.com/Doubleshotjs/doubleshot/tree/main/packages/plugin-vite",
+          "desc": "- For building Node.js backend or Electron main process."
+      }
+  ]
+}
