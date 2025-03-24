@@ -73,7 +73,8 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     let source_dir = clone_path.join(&selected_template);
     let target_subdir = target_dir.join(&selected_template);
-    let rename_option = matches.get_one::<String>("rename").map(String::as_str);
+    let target_path = utils::get_target_path(&selected_template)?;
+    let rename_option = target_path.as_path().to_str();
 
     if let Err(e) = template::copy_template(&source_dir, &target_subdir, rename_option) {
         eprintln!("Copying failed: {:?}", e);

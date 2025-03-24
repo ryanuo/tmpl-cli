@@ -41,7 +41,7 @@ template-cli [参数选项]
 template-cli https://github.com/my-repo/templates
 
 # 指定参数下载
-template-cli -r https://github.com/my-repo -b dev -d ./new-project -t my_template --rename new_name
+template-cli -r https://github.com/my-repo -b dev -d ./new-project -t my_template
 
 # 查看缓存配置
 template-cli -x
@@ -58,7 +58,6 @@ template-cli --original https://github.com/my-repo.json
 | `-b, --branch`        | Git 分支名称               | main         |
 | `-d, --target-dir`    | 模板保存的目标目录         | 当前目录     |
 | `-t, template`        | 需要使用的具体模板名称     | 交互式选择   |
-| `-n, --rename <name>` | 自定义目录名称             | 模板原始名称 |
 | `-o, --original`      | 使用原生 JSON 配置文件来源 | -            |
 | `-c, --clear-cache`   | 清除配置缓存               | -            |
 | `-x, --check-cache`   | 查看已保存的配置缓存       | -            |
@@ -80,12 +79,6 @@ template-cli --original https://github.com/my-repo.json
   2. Backend Projects
 
   Select a category (default: Frontend Projects):
-  ```
-
-- **模板重命名**：  
-  克隆时可通过 `-n` 参数自定义项目名称，例如：
-  ```bash
-  template-cli -r my-repo -n new-project-name
   ```
 
 ## 工作流程
@@ -131,9 +124,8 @@ src/
 ├── errors.rs   # 错误处理
 ├── git.rs      # Git操作
 ├── original.rs # 原生模式实现
-├── utils.rs # 通用方法
+├── utils.rs    # 通用方法
 └── template.rs # 模板处理核心
-
 ```
 
 ### 贡献指南
