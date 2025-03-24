@@ -20,15 +20,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
     let matches = cli::build_cli().get_matches();
 
     if matches.contains_id("original") {
-        if let Some(original_repo) = matches.get_one::<String>("original") {
-            let project_name = original_repo.split('/').last().unwrap_or("");
-            let target_path = utils::get_target_path(project_name)?;
-
-            utils::clone_repository(original_repo, &target_path)?;
-            return Ok(());
-        }
-        let _ = original::select_project_from_json();
-
+        handle_original(&matches)?;
         return Ok(());
     }
 
@@ -45,8 +37,28 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
 
+    handle_template_workflow(&matches, &cache_path)?;
+    Ok(())
+}
+
+fn handle_original(matches: &clap::ArgMatches) -> Result<(), Box<dyn std::error::Error>> {
+    if let Some(original_repo) = matches.get_one::<String>("original") {
+        let project_name = original_repo.split('/').last().unwrap_or("");
+        let target_path = utils::get_target_path(project_name)?;
+
+        utils::clone_repository(original_repo, &target_path)?;
+    } else {
+        let _ = original::select_project_from_json();
+    }
+    Ok(())
+}
+
+fn handle_template_workflow(
+    matches: &clap::ArgMatches,
+    cache_path: &PathBuf,
+) -> Result<(), Box<dyn std::error::Error>> {
     let mut cache = cache::read_cache(&cache_path).unwrap_or_default();
-    let repo_url = get_repo_url(&matches, &mut cache, &cache_path)?;
+    let repo_url = get_repo_url(matches, &mut cache, cache_path)?;
     let branch = matches
         .get_one::<String>("branch")
         .cloned()
@@ -61,13 +73,22 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     cache.branch = Some(branch.clone());
     cache.target_dir = Some(target_dir_str.clone());
-    cache::write_cache(&cache_path, &cache)?;
+    cache::write_cache(cache_path, &cache)?;
 
     let temp_dir = TempDir::new().map_err(TemplateError::IoError)?;
     let clone_path = temp_dir.path().join("cloned_repo");
     git::clone_repo(&repo_url, &branch, &clone_path)?;
 
-    let templates = template::get_template_list(&clone_path)?;
+    process_templates(matches, &clone_path, &target_dir)?;
+    Ok(())
+}
+
+fn process_templates(
+    matches: &clap::ArgMatches,
+    clone_path: &PathBuf,
+    target_dir: &PathBuf,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let templates = template::get_template_list(clone_path)?;
     let selected_template =
         template::select_template(matches.get_one::<String>("template"), &templates)?;
 
