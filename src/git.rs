@@ -9,7 +9,9 @@ pub fn clone_repo(repo_url: &str, branch: &str, target_path: &Path) -> Result<()
         "--branch",
         branch,
         repo_url,
-        target_path.to_str().expect("Invalid target path"),
+        target_path
+            .to_str()
+            .ok_or_else(|| TemplateError::InvalidTargetPath)?,
     ]);
 
     let output = cmd.output().map_err(|e| TemplateError::IoError(e))?;

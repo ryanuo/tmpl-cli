@@ -16,4 +16,10 @@ pub enum TemplateError {
     TemplateNotFound,
     #[error("No repository URL provided and no cache found.")]
     MissingRepoUrl,
+    #[error("Invalid target path")]
+    InvalidTargetPath,
+    #[error("Home directory not found")]
+    HomeDirNotFound,
+    #[error("Failed to create configuration directory: {0}")]
+    ConfigDirCreationFailed(String),
 }

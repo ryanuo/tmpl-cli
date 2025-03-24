@@ -6,14 +6,18 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::time::Duration;
 use std::fs;
+use crate::errors::TemplateError;
 
 pub fn read_config_json(config_file: &str) -> PathBuf {
-    let home_dir = dirs::home_dir().expect("Unable to access the user home directory.");
+    let home_dir = dirs::home_dir().ok_or(TemplateError::HomeDirNotFound).unwrap();
+
     println!("Home directory: {:?}", home_dir); // 打印 home_dir
 
     let config_dir = home_dir.join(".tmpl-cli");
     if !config_dir.exists() {
-        fs::create_dir_all(&config_dir).expect("Failed to create configuration directory.");
+        fs::create_dir_all(&config_dir)
+            .map_err(|e| TemplateError::ConfigDirCreationFailed(e.to_string()))
+            .unwrap();
     }
 
     config_dir.join(config_file)
