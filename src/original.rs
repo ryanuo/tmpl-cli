@@ -96,8 +96,8 @@ fn process_selected_item(selected_item: &Value) -> Result<(), Box<dyn std::error
         "You selected the project: {}",
         selected_item["name"].as_str().unwrap().green()
     );
-    println!("Link: {}", link);
-    println!("Description: {}", selected_item["desc"].as_str().unwrap());
+    println!("Link: {}", link.blue());
+    println!("Desc: {}", selected_item["desc"].as_str().unwrap().bright_yellow());
 
     Ok(())
 }
