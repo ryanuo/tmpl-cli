@@ -4,11 +4,21 @@ use serde_json::Value;
 use std::fs;
 
 use crate::utils;
+use crate::errors::TemplateError;
 
-pub fn select_project_from_json() -> Result<(), Box<dyn std::error::Error>> {
-    let cache_path = utils::read_config_json("data.json");
-    let json_data = fs::read_to_string(cache_path)?;
-    let json: Value = serde_json::from_str(&json_data)?;
+pub fn select_project_from_json(json_source: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
+    let json_data = if let Some(source) = json_source {
+        if source.starts_with("http://") || source.starts_with("https://") {
+            reqwest::blocking::get(source)?.text()?
+        } else {
+            return Err(Box::new(TemplateError::InvalidSourceUrl("The provided source URL is invalid.".to_string())));
+        }
+    } else {
+        let cache_path = utils::read_config_json("data.json");
+        fs::read_to_string(cache_path)?
+    };
+
+    let json: Value = serde_json::from_str(&json_data).map_err(|e| TemplateError::InvalidJsonFormat(e.to_string()))?;
 
     let main_categories: Vec<_> = json.as_object().unwrap().keys().collect();
 

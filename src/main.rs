@@ -6,13 +6,14 @@ mod original;
 mod template;
 mod utils;
 
+use colored::Colorize;
 use errors::TemplateError;
 use std::path::PathBuf;
 use tempfile::TempDir;
 
 fn main() {
     if let Err(e) = run() {
-        eprintln!("Error: {}", e);
+        eprintln!("Error: {}", e.to_string().red());
     }
 }
 
@@ -42,14 +43,8 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn handle_original(matches: &clap::ArgMatches) -> Result<(), Box<dyn std::error::Error>> {
-    if let Some(original_repo) = matches.get_one::<String>("original") {
-        let project_name = original_repo.split('/').last().unwrap_or("");
-        let target_path = utils::get_target_path(project_name)?;
-
-        utils::clone_repository(original_repo, &target_path)?;
-    } else {
-        let _ = original::select_project_from_json();
-    }
+    let json_source = matches.get_one::<String>("original").map(String::as_str);
+    original::select_project_from_json(json_source)?;
     Ok(())
 }
 

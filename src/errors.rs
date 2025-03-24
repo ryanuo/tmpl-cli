@@ -22,4 +22,8 @@ pub enum TemplateError {
     HomeDirNotFound,
     #[error("Failed to create configuration directory: {0}")]
     ConfigDirCreationFailed(String),
+    #[error("Invalid JSON format: {0}")]
+    InvalidJsonFormat(String),
+    #[error("Invalid source URL: {0}")]
+    InvalidSourceUrl(String),
 }
