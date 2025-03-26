@@ -1,24 +1,24 @@
 # Template CLI 🚀
 
-便捷的项目模板管理工具，从 Git 仓库快速克隆模板
+A convenient project template management tool to quickly clone templates from Git repositories.
 
-## 特性
+## Features
 
-- ✅ 交互式模板选择
-- ✅ 命令行参数灵活配置
-- ✅ 智能缓存配置管理
-- ✅ 支持分支指定和目录重命名
-- ⚡ 支持原生 JSON 项目选择模式
+- ✅ Interactive template selection
+- ✅ Flexible configuration via command-line arguments
+- ✅ Intelligent cache configuration management
+- ✅ Support for branch specification and directory renaming
+- ⚡ Support for native JSON project selection mode
 
-## 安装
+## Installation
 
-### 通过 Cargo 安装
+### Install via Cargo
 
 ```bash
 cargo install --path .
 ```
 
-### 手动构建
+### Manual Build
 
 ```bash
 git clone https://github.com/your-repo/project-template.git
@@ -26,85 +26,85 @@ cd project-template
 cargo build --release
 ```
 
-## 使用指南
+## User Guide
 
-### 基础命令结构
+### Basic Command Structure
 
 ```bash
-template-cli [参数选项]
+template-cli [options]
 ```
 
-### 快速开始示例
+### Quick Start Examples
 
 ```bash
-# 克隆模板项目（交互式选择）
+# Clone a template project (interactive selection)
 template-cli https://github.com/my-repo/templates
 
-# 指定参数下载
+# Clone with specified parameters
 template-cli -r https://github.com/my-repo -b dev -d ./new-project -t my_template
 
-# 查看缓存配置
+# View cache configuration
 template-cli -x
 
-# 使用原生项目选择模式
+# Use native project selection mode
 template-cli --original https://github.com/my-repo.json
 ```
 
-## 参数说明
+## Parameter Description
 
-| 参数                  | 描述                       | 默认值       |
-| --------------------- | -------------------------- | ------------ |
-| `-r, --repo`          | 需要克隆的 Git 仓库地址    | -            |
-| `-b, --branch`        | Git 分支名称               | main         |
-| `-d, --target-dir`    | 模板保存的目标目录         | 当前目录     |
-| `-t, template`        | 需要使用的具体模板名称     | 交互式选择   |
-| `-o, --original`      | 使用原生 JSON 配置文件来源 | -            |
-| `-c, --clear-cache`   | 清除配置缓存               | -            |
-| `-x, --check-cache`   | 查看已保存的配置缓存       | -            |
+| Parameter             | Description                     | Default Value |
+| --------------------- | -------------------------------- | ------------- |
+| `-r, --repo`          | Git repository URL to clone     | -             |
+| `-b, --branch`        | Git branch name                 | main          |
+| `-d, --target-dir`    | Target directory for the template | Current directory |
+| `-t, template`        | Specific template name to use   | Interactive selection |
+| `-o, --original`      | Use native JSON configuration source | -         |
+| `-c, --clear-cache`   | Clear configuration cache       | -             |
+| `-x, --check-cache`   | View saved configuration cache  | -             |
 
-### 进阶参数
+### Advanced Parameters
 
-- **智能缓存**：  
-  自动保存最近使用的仓库、分支等配置，再次使用时会优先读取缓存
+- **Intelligent Cache**:  
+  Automatically saves recently used repository, branch, and other configurations. These will be prioritized on subsequent uses.
 
-  - 查看缓存：`template-cli -x`
-  - 清除缓存：`template-cli -c`
+  - View cache: `template-cli -x`
+  - Clear cache: `template-cli -c`
 
-- **原生项目选择模式**：  
-  使用 `--original` 参数指定 JSON 配置文件地址，会展示类似这样的界面进行选择：
+- **Native Project Selection Mode**:  
+  Use the `--original` parameter to specify the JSON configuration file URL. This will display a selection interface like the following:
 
   ```bash
-  Category：
+  Category:
   1. Frontend Projects
   2. Backend Projects
 
   Select a category (default: Frontend Projects):
   ```
 
-## 工作流程
+## Workflow
 
-1. 用户输入参数或选择交互模式
-2. 根据参数/缓存确定需要克隆的仓库信息
-3. 从指定分支克隆仓库到临时目录
-4. 展示可用模板列表供用户选择
-5. 将选择的模板复制到目标路径
-6. 自动清理临时文件并输出成功提示
+1. User inputs parameters or selects interactive mode.
+2. Determine the repository information to clone based on parameters/cache.
+3. Clone the repository from the specified branch to a temporary directory.
+4. Display the available template list for user selection.
+5. Copy the selected template to the target path.
+6. Automatically clean up temporary files and output a success message.
 
-## 常见问题
+## FAQ
 
-**Q: 缓存存储在哪儿？**
+**Q: Where is the cache stored?**
 
 ```bash
 ~/.tmpl-cli/{.template_cli_cache.json}
 ```
 
-**Q: 如何完全重置配置？**
+**Q: How to completely reset the configuration?**
 
 ```bash
 rm -rf ~/.tmpl-cli && template-cli --clear-cache
 ```
 
-**Q: 支持的模板仓库结构？**
+**Q: Supported template repository structure?**
 
 ```
 <repository>/
@@ -113,24 +113,24 @@ rm -rf ~/.tmpl-cli && template-cli --clear-cache
 └── .gitignore
 ```
 
-## 开发者指南
+## Developer Guide
 
-### 代码结构
+### Code Structure
 
 ```
 src/
-├── cache.rs    # 缓存模块
-├── cli.rs      # 命令行解析
-├── errors.rs   # 错误处理
-├── git.rs      # Git操作
-├── original.rs # 原生模式实现
-├── utils.rs    # 通用方法
-└── template.rs # 模板处理核心
+├── cache.rs    # Cache module
+├── cli.rs      # Command-line parsing
+├── errors.rs   # Error handling
+├── git.rs      # Git operations
+├── original.rs # Native mode implementation
+├── utils.rs    # Utility methods
+└── template.rs # Core template processing
 ```
 
-### 贡献指南
+### Contribution Guide
 
-1. Fork 本项目
-2. 创建功能分支：`git checkout -b feature/X`
-3. 实现功能并测试
-4. 创建 Pull Request
+1. Fork this repository.
+2. Create a feature branch: `git checkout -b feature/X`.
+3. Implement the feature and test it.
+4. Create a Pull Request.
