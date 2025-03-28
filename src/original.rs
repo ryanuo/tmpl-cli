@@ -2,18 +2,22 @@ use colored::*;
 use dialoguer::Select;
 use serde_json::Value;
 use std::fs;
+use std::path::PathBuf;
 
-use crate::utils;
+use crate::{cli, utils};
 use crate::errors::TemplateError;
 
-pub fn select_project_from_json(json_source: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
+pub fn fetch_project_from_json(json_source: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
     let json_data = fetch_json_data(json_source)?;
-    let json: Value = parse_json(&json_data)?;
+    let json: Value = serde_json::from_str(&json_data)
+        .map_err(|e| TemplateError::InvalidJsonFormat(e.to_string()))?;
 
-    let main_categories = get_main_categories(&json);
+    let main_categories: Vec<&String> = json.as_object().unwrap().keys().collect();
     let selected_category = select_category(&main_categories)?;
 
-    let items = get_items_in_category(&json, selected_category)?;
+    let items = json[selected_category]
+        .as_array()
+        .ok_or("Failed to retrieve items in the selected category")?;
     if items.is_empty() {
         println!("There are no available projects in the current category.");
         return Ok(());
@@ -40,14 +44,6 @@ fn fetch_json_data(json_source: Option<&str>) -> Result<String, Box<dyn std::err
     }
 }
 
-fn parse_json(json_data: &str) -> Result<Value, TemplateError> {
-    serde_json::from_str(json_data).map_err(|e| TemplateError::InvalidJsonFormat(e.to_string()))
-}
-
-fn get_main_categories(json: &Value) -> Vec<&String> {
-    json.as_object().unwrap().keys().collect()
-}
-
 fn select_category<'a>(categories: &'a [&'a String]) -> Result<&'a String, Box<dyn std::error::Error>> {
     let main_selection = Select::new()
         .with_prompt("Please select a category")
@@ -55,10 +51,6 @@ fn select_category<'a>(categories: &'a [&'a String]) -> Result<&'a String, Box<d
         .default(0)
         .interact()?;
     Ok(categories[main_selection])
-}
-
-fn get_items_in_category<'a>(json: &'a Value, category: &String) -> Result<&'a Vec<Value>, Box<dyn std::error::Error>> {
-    Ok(json[category].as_array().unwrap())
 }
 
 fn format_choices(items: &[Value]) -> Vec<String> {
@@ -88,7 +80,10 @@ fn select_item<'a>(
 fn process_selected_item(selected_item: &Value) -> Result<(), Box<dyn std::error::Error>> {
     let link = selected_item["link"].as_str().unwrap();
     let project_name = selected_item["name"].as_str().unwrap();
-    let target_path = utils::get_target_path(project_name)?;
+    let matches = cli::build_cli().get_matches();
+    let order_info = utils::resolve_order_info(&matches);
+    let dir_path = PathBuf::from(&order_info.target_dir);
+    let target_path = utils::get_target_path(&dir_path, project_name)?;
 
     utils::clone_repository(link, &target_path)?;
 

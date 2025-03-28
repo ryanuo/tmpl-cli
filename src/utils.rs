@@ -6,13 +6,11 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::time::Duration;
 use std::fs;
+use crate::cache;
 use crate::errors::TemplateError;
 
 pub fn read_config_json(config_file: &str) -> PathBuf {
     let home_dir = dirs::home_dir().ok_or(TemplateError::HomeDirNotFound).unwrap();
-
-    println!("Home directory: {:?}", home_dir); // 打印 home_dir
-
     let config_dir = home_dir.join(".tmpl-cli");
     if !config_dir.exists() {
         fs::create_dir_all(&config_dir)
@@ -64,20 +62,52 @@ pub fn clone_repository(
 
     Ok(())
 }
-/// Prompts the user for the target folder name to clone into and returns the path.
-pub fn get_target_path(default_name: &str) -> Result<PathBuf, Box<dyn std::error::Error>> {
-    let default_path = std::env::current_dir()?.join(default_name);
 
+/// Prompts the user for the target folder name to clone into and returns the path.
+pub fn get_target_path(default_path: &Path, default_name: &str) -> Result<PathBuf, Box<dyn std::error::Error>> {
     let input: String = Input::new()
         .with_prompt("Enter the folder name to clone into (leave empty to use default name)")
         .default(default_name.to_string())
         .interact_text()?;
 
     let target_path = if input.is_empty() {
-        default_path
+        default_path.join(default_name)
     } else {
-        std::env::current_dir()?.join(input)
+        default_path.join(input)
     };
 
     Ok(target_path)
+}
+
+pub fn get_cache_info() -> (PathBuf, cache::Cache) {
+    let cache_path = read_config_json(".template_cli_cache.json");
+    let cache = cache::read_cache(&cache_path).unwrap_or_default();
+    (cache_path, cache)
+}
+
+pub struct OrderInfo {
+    pub branch: String,
+    pub target_dir: String,
+}
+pub fn resolve_order_info(matches: &clap::ArgMatches) -> OrderInfo {
+    let (cache_path, mut cache) = get_cache_info();
+    let branch = matches
+        .get_one::<String>("branch")
+        .cloned()
+        .or_else(|| cache.branch.clone())
+        .unwrap_or_else(|| "main".to_string());
+    let target_dir = matches
+        .get_one::<String>("target_dir")
+        .cloned()
+        .or_else(|| cache.target_dir.clone())
+        .unwrap_or_else(|| "./".to_string());
+
+    cache.branch = Some(branch.clone());
+    cache.target_dir = Some(target_dir.clone());
+    cache::write_cache(&cache_path, &cache).expect("Failed to write cache");
+
+    OrderInfo {
+        branch,
+        target_dir,
+    }
 }
