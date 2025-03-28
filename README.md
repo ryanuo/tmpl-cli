@@ -72,7 +72,7 @@ template-cli --original https://github.com/my-repo.json
 
 - **Native Project Selection Mode**:  
   Use the `--original` parameter to specify the JSON configuration file URL. This will display a selection interface like the following:
-
+  eg: `--original https://raw.githubusercontent.com/ryanuo/tmpl-cli/refs/heads/main/.tmpl-cli/data.json`
   ```bash
   Category:
   1. Frontend Projects
